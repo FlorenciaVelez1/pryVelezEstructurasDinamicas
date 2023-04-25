@@ -75,6 +75,7 @@
             // mskCodigoNE
             // 
             this.mskCodigoNE.Location = new System.Drawing.Point(99, 36);
+            this.mskCodigoNE.Mask = "000000";
             this.mskCodigoNE.Name = "mskCodigoNE";
             this.mskCodigoNE.Size = new System.Drawing.Size(142, 22);
             this.mskCodigoNE.TabIndex = 1;
@@ -280,7 +281,9 @@
             this.Controls.Add(this.mrcElementoEliminado);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Name = "frmPila";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica - Pila";
+            this.Load += new System.EventHandler(this.frmPila_Load);
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();
             this.mrcElementoEliminado.ResumeLayout(false);

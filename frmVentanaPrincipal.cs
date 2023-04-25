@@ -52,10 +52,15 @@ namespace pryVelezEstructurasDinamicas
             frmListaEnlazadaSimple ListaEnlazadaSimple = new frmListaEnlazadaSimple();
             ListaEnlazadaSimple.ShowDialog();
         }
-        private void listaDobToolStripMenuItem_Click(object sender, EventArgs e)
+        private void simpleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListaEnlazadaDoble ListaEnlazadaDoble = new frmListaEnlazadaDoble();
-            ListaEnlazadaDoble.ShowDialog();
+            frmListaEnlazadaSimple ListaSimple = new frmListaEnlazadaSimple();
+            ListaSimple.ShowDialog();
+        }
+        private void dobleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaEnlazadaDoble ListaDoble = new frmListaEnlazadaDoble();
+            ListaDoble.ShowDialog();
         }
     }
 }

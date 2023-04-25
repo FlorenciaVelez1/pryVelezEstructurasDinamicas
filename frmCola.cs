@@ -29,23 +29,32 @@ namespace pryVelezEstructurasDinamicas
             mskCodigoNE.Text = "";
             txtNombreNE.Text = "";
             txtTramiteNE.Text = "";
+            cmdEliminar.Enabled = true;
         }
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
             if (EstructuraCola.Primero != null)
             {
-                lblCodigoEE.Text = EstructuraCola.Primero.Codigo.ToString();
-                lblNombreEE.Text = EstructuraCola.Primero.Nombre;
-                lblTramiteEE.Text = EstructuraCola.Primero.Tramite;
+                lblCodigoInfo.Text = EstructuraCola.Primero.Codigo.ToString();
+                lblNombreInfo.Text = EstructuraCola.Primero.Nombre;
+                lblTramiteInfo.Text = EstructuraCola.Primero.Tramite;
                 EstructuraCola.Eliminar();
                 EstructuraCola.Recorrer(GrillaCola);
                 EstructuraCola.Recorrer(lstListado);
             }
             else
             {
-                lblCodigoEE.Text = "";
-                lblNombreEE.Text = "";
-                lblTramiteEE.Text = "";
+                lblCodigoInfo.Text = "";
+                lblNombreInfo.Text = "";
+                lblTramiteInfo.Text = "";
+                cmdEliminar.Enabled=false;
+            }
+        }
+        private void frmCola_Load(object sender, EventArgs e)
+        {
+          if(EstructuraCola.Primero == null)
+            {
+                cmdEliminar.Enabled = false;
             }
         }
     }

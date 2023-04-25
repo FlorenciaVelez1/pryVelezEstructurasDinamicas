@@ -129,7 +129,7 @@
             this.cmdAgregar.Location = new System.Drawing.Point(348, 173);
             this.cmdAgregar.Name = "cmdAgregar";
             this.cmdAgregar.Size = new System.Drawing.Size(101, 38);
-            this.cmdAgregar.TabIndex = 11;
+            this.cmdAgregar.TabIndex = 4;
             this.cmdAgregar.Text = "Agregar";
             this.cmdAgregar.UseVisualStyleBackColor = true;
             this.cmdAgregar.Click += new System.EventHandler(this.cmdAgregar_Click);
@@ -214,13 +214,14 @@
             this.mrcNuevoElemento.Location = new System.Drawing.Point(249, 10);
             this.mrcNuevoElemento.Name = "mrcNuevoElemento";
             this.mrcNuevoElemento.Size = new System.Drawing.Size(262, 157);
-            this.mrcNuevoElemento.TabIndex = 8;
+            this.mrcNuevoElemento.TabIndex = 0;
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
             // 
             // mskCodigoNE
             // 
             this.mskCodigoNE.Location = new System.Drawing.Point(99, 36);
+            this.mskCodigoNE.Mask = "000000";
             this.mskCodigoNE.Name = "mskCodigoNE";
             this.mskCodigoNE.Size = new System.Drawing.Size(142, 22);
             this.mskCodigoNE.TabIndex = 1;
@@ -281,7 +282,9 @@
             this.Controls.Add(this.mrcElementoEliminado);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Name = "frmCola";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica - Cola";
+            this.Load += new System.EventHandler(this.frmCola_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCola)).EndInit();
             this.mrcElementoEliminado.ResumeLayout(false);

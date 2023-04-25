@@ -16,5 +16,40 @@ namespace pryVelezEstructurasDinamicas
         {
             InitializeComponent();
         }
+        clsListaSimple ListaSimple = new clsListaSimple();
+        private void cmdAgregar_Click(object sender, EventArgs e)
+        {
+            clsNodo objNodo = new clsNodo();
+            objNodo.Codigo = Convert.ToInt32(mskCodigoNE.Text);
+            objNodo.Nombre = txtNombreNE.Text;
+            objNodo.Tramite = txtTramiteNE.Text;
+            ListaSimple.Agregar(objNodo);
+            ListaSimple.Recorrer(GrillaListaSimple);
+            ListaSimple.Recorrer(lstListado);
+            ListaSimple.Recorrer(cbCodigo);
+            mskCodigoNE.Text = "";
+            txtNombreNE.Text = "";
+            txtTramiteNE.Text = "";
+        }
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+            if (ListaSimple.Primero != null)
+            {
+                Int32 codigo = Convert.ToInt32(cbCodigo.Text);
+                ListaSimple.Eliminar(codigo);
+                ListaSimple.Recorrer(GrillaListaSimple);
+                ListaSimple.Recorrer(lstListado);
+                ListaSimple.Recorrer(cbCodigo);
+            }
+            cbCodigo.SelectedIndex = -1;
+            cmdEliminar.Enabled = false;
+        }
+        private void cbCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCodigo.SelectedIndex != -1)
+            {
+                cmdEliminar.Enabled = true;
+            }
+        }
     }
 }

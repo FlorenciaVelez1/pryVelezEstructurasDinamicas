@@ -23,25 +23,22 @@ namespace pryVelezEstructurasDinamicas
             ObjNodo.Codigo = Convert.ToInt32(mskCodigoNE.Text);
             ObjNodo.Nombre = txtNombreNE.Text;
             ObjNodo.Tramite = txtTramiteNE.Text;
-
             PilaPersonas.Agregar(ObjNodo);
             PilaPersonas.Recorrer(GrillaPila);
             PilaPersonas.Recorrer(lstListado);
-
             mskCodigoNE.Text = "";
             txtNombreNE.Text = "";
             txtTramiteNE.Text = "";
+            cmdEliminar.Enabled = true;
         }
 
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
             if (PilaPersonas.Primero != null)
             {
-
                 lblCodigoInfo.Text = PilaPersonas.Primero.Codigo.ToString();
                 lblNombreInfo.Text = PilaPersonas.Primero.Nombre;
                 lblTramiteInfo.Text = PilaPersonas.Primero.Tramite;
-
                 PilaPersonas.Eliminar();
                 PilaPersonas.Recorrer(GrillaPila);
                 PilaPersonas.Recorrer(lstListado);
@@ -51,6 +48,14 @@ namespace pryVelezEstructurasDinamicas
                 lblCodigoInfo.Text = "";
                 lblNombreInfo.Text = "";
                 lblTramiteInfo.Text = "";
+                cmdEliminar.Enabled = false;
+            }
+        }
+        private void frmPila_Load(object sender, EventArgs e)
+        {
+            if (PilaPersonas.Primero == null)
+            {
+                cmdEliminar.Enabled = false;
             }
         }
     }

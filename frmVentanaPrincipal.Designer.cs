@@ -31,16 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentanaPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sistemasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estructurasLinealesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estructurasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosDelDesarrolladorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estructurasLinealesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDobToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estructurasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.árbolBinarioDeBusquedaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grafoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dobleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,26 +67,6 @@
             this.sistemasToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.sistemasToolStripMenuItem.Text = "Sistemas";
             // 
-            // estructurasLinealesToolStripMenuItem
-            // 
-            this.estructurasLinealesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.colaToolStripMenuItem,
-            this.pilaToolStripMenuItem,
-            this.listaToolStripMenuItem,
-            this.listaDobToolStripMenuItem});
-            this.estructurasLinealesToolStripMenuItem.Name = "estructurasLinealesToolStripMenuItem";
-            this.estructurasLinealesToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
-            this.estructurasLinealesToolStripMenuItem.Text = "Estructuras Lineales";
-            // 
-            // estructurasToolStripMenuItem
-            // 
-            this.estructurasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.árbolBinarioDeBusquedaToolStripMenuItem,
-            this.grafoToolStripMenuItem});
-            this.estructurasToolStripMenuItem.Name = "estructurasToolStripMenuItem";
-            this.estructurasToolStripMenuItem.Size = new System.Drawing.Size(179, 24);
-            this.estructurasToolStripMenuItem.Text = "Estructuras Ramificadas";
-            // 
             // datosDelDesarrolladorToolStripMenuItem
             // 
             this.datosDelDesarrolladorToolStripMenuItem.Name = "datosDelDesarrolladorToolStripMenuItem";
@@ -100,33 +81,47 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // estructurasLinealesToolStripMenuItem
+            // 
+            this.estructurasLinealesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.colaToolStripMenuItem,
+            this.pilaToolStripMenuItem,
+            this.listaToolStripMenuItem});
+            this.estructurasLinealesToolStripMenuItem.Name = "estructurasLinealesToolStripMenuItem";
+            this.estructurasLinealesToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.estructurasLinealesToolStripMenuItem.Text = "Estructuras Lineales";
+            // 
             // colaToolStripMenuItem
             // 
             this.colaToolStripMenuItem.Name = "colaToolStripMenuItem";
-            this.colaToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.colaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.colaToolStripMenuItem.Text = "Cola";
             this.colaToolStripMenuItem.Click += new System.EventHandler(this.colaToolStripMenuItem_Click);
             // 
             // pilaToolStripMenuItem
             // 
             this.pilaToolStripMenuItem.Name = "pilaToolStripMenuItem";
-            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
+            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pilaToolStripMenuItem.Text = "Pila";
             this.pilaToolStripMenuItem.Click += new System.EventHandler(this.pilaToolStripMenuItem_Click);
             // 
             // listaToolStripMenuItem
             // 
+            this.listaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.simpleToolStripMenuItem,
+            this.dobleToolStripMenuItem});
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
-            this.listaToolStripMenuItem.Text = "Lista enlazada simple";
-            this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.listaToolStripMenuItem.Text = "Lista";
             // 
-            // listaDobToolStripMenuItem
+            // estructurasToolStripMenuItem
             // 
-            this.listaDobToolStripMenuItem.Name = "listaDobToolStripMenuItem";
-            this.listaDobToolStripMenuItem.Size = new System.Drawing.Size(271, 26);
-            this.listaDobToolStripMenuItem.Text = "Lista doblemente enlazada";
-            this.listaDobToolStripMenuItem.Click += new System.EventHandler(this.listaDobToolStripMenuItem_Click);
+            this.estructurasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.árbolBinarioDeBusquedaToolStripMenuItem,
+            this.grafoToolStripMenuItem});
+            this.estructurasToolStripMenuItem.Name = "estructurasToolStripMenuItem";
+            this.estructurasToolStripMenuItem.Size = new System.Drawing.Size(179, 24);
+            this.estructurasToolStripMenuItem.Text = "Estructuras Ramificadas";
             // 
             // árbolBinarioDeBusquedaToolStripMenuItem
             // 
@@ -141,6 +136,20 @@
             this.grafoToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.grafoToolStripMenuItem.Text = "Grafo";
             this.grafoToolStripMenuItem.Click += new System.EventHandler(this.grafoToolStripMenuItem_Click);
+            // 
+            // simpleToolStripMenuItem
+            // 
+            this.simpleToolStripMenuItem.Name = "simpleToolStripMenuItem";
+            this.simpleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.simpleToolStripMenuItem.Text = "Simple";
+            this.simpleToolStripMenuItem.Click += new System.EventHandler(this.simpleToolStripMenuItem_Click);
+            // 
+            // dobleToolStripMenuItem
+            // 
+            this.dobleToolStripMenuItem.Name = "dobleToolStripMenuItem";
+            this.dobleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dobleToolStripMenuItem.Text = "Doble";
+            this.dobleToolStripMenuItem.Click += new System.EventHandler(this.dobleToolStripMenuItem_Click);
             // 
             // frmVentanaPrincipal
             // 
@@ -171,9 +180,10 @@
         private System.Windows.Forms.ToolStripMenuItem pilaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estructurasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaDobToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem árbolBinarioDeBusquedaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grafoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simpleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dobleToolStripMenuItem;
     }
 }
 
