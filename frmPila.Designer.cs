@@ -79,6 +79,7 @@
             this.mskCodigoNE.Name = "mskCodigoNE";
             this.mskCodigoNE.Size = new System.Drawing.Size(142, 22);
             this.mskCodigoNE.TabIndex = 1;
+            this.mskCodigoNE.TextChanged += new System.EventHandler(this.mskCodigoNE_TextChanged);
             // 
             // txtTramiteNE
             // 
@@ -87,6 +88,7 @@
             this.txtTramiteNE.Name = "txtTramiteNE";
             this.txtTramiteNE.Size = new System.Drawing.Size(142, 22);
             this.txtTramiteNE.TabIndex = 3;
+            this.txtTramiteNE.TextChanged += new System.EventHandler(this.txtTramiteNE_TextChanged);
             // 
             // txtNombreNE
             // 
@@ -95,6 +97,7 @@
             this.txtNombreNE.Name = "txtNombreNE";
             this.txtNombreNE.Size = new System.Drawing.Size(142, 22);
             this.txtNombreNE.TabIndex = 2;
+            this.txtNombreNE.TextChanged += new System.EventHandler(this.txtNombreNE_TextChanged);
             // 
             // lblCodigoNE
             // 
@@ -194,6 +197,7 @@
             // 
             // cmdAgregar
             // 
+            this.cmdAgregar.Enabled = false;
             this.cmdAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAgregar.Location = new System.Drawing.Point(352, 180);
             this.cmdAgregar.Name = "cmdAgregar";
@@ -205,6 +209,7 @@
             // 
             // cmdEliminar
             // 
+            this.cmdEliminar.Enabled = false;
             this.cmdEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdEliminar.Location = new System.Drawing.Point(636, 180);
             this.cmdEliminar.Name = "cmdEliminar";

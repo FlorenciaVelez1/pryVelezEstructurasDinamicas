@@ -57,5 +57,28 @@ namespace pryVelezEstructurasDinamicas
                 cmdEliminar.Enabled = false;
             }
         }
+        private void Chequeo()
+        {
+            if (mskCodigoNE.Text != "" & txtNombreNE.Text != "" & txtTramiteNE.Text != "")
+            {
+                cmdAgregar.Enabled = true;
+            }
+            else
+            {
+                cmdAgregar.Enabled = false;
+            }
+        }
+        private void txtTramiteNE_TextChanged(object sender, EventArgs e)
+        {
+            Chequeo();
+        }
+        private void txtNombreNE_TextChanged(object sender, EventArgs e)
+        {
+            Chequeo();
+        }
+        private void mskCodigoNE_TextChanged(object sender, EventArgs e)
+        {
+            Chequeo();
+        }
     }
 }
