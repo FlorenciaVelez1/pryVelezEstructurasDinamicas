@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCola));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picCola = new System.Windows.Forms.PictureBox();
             this.lstListado = new System.Windows.Forms.ListBox();
             this.GrillaCola = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,21 +51,21 @@
             this.lblCodigoNE = new System.Windows.Forms.Label();
             this.lblNombreNE = new System.Windows.Forms.Label();
             this.lblTramiteNE = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCola)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCola)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picCola
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 183);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.picCola.Image = ((System.Drawing.Image)(resources.GetObject("picCola.Image")));
+            this.picCola.Location = new System.Drawing.Point(8, 12);
+            this.picCola.Name = "picCola";
+            this.picCola.Size = new System.Drawing.Size(216, 183);
+            this.picCola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCola.TabIndex = 13;
+            this.picCola.TabStop = false;
             // 
             // lstListado
             // 
@@ -279,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 466);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picCola);
             this.Controls.Add(this.lstListado);
             this.Controls.Add(this.GrillaCola);
             this.Controls.Add(this.cmdEliminar);
@@ -290,7 +290,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica - Cola";
             this.Load += new System.EventHandler(this.frmCola_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCola)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCola)).EndInit();
             this.mrcElementoEliminado.ResumeLayout(false);
             this.mrcElementoEliminado.PerformLayout();
@@ -302,7 +302,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picCola;
         private System.Windows.Forms.ListBox lstListado;
         private System.Windows.Forms.DataGridView GrillaCola;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

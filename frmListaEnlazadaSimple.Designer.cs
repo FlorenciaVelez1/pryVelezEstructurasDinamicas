@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaEnlazadaSimple));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picListaEnsazadaSimple = new System.Windows.Forms.PictureBox();
             this.lstListado = new System.Windows.Forms.ListBox();
             this.GrillaListaSimple = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +38,7 @@
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.cmdAgregar = new System.Windows.Forms.Button();
             this.mrcElementoEliminado = new System.Windows.Forms.GroupBox();
+            this.cbCodigo = new System.Windows.Forms.ComboBox();
             this.lblCodigoEE = new System.Windows.Forms.Label();
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
             this.mskCodigoNE = new System.Windows.Forms.MaskedTextBox();
@@ -46,22 +47,21 @@
             this.lblCodigoNE = new System.Windows.Forms.Label();
             this.lblNombreNE = new System.Windows.Forms.Label();
             this.lblTramiteNE = new System.Windows.Forms.Label();
-            this.cbCodigo = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picListaEnsazadaSimple)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaListaSimple)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picListaEnsazadaSimple
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.picListaEnsazadaSimple.Image = ((System.Drawing.Image)(resources.GetObject("picListaEnsazadaSimple.Image")));
+            this.picListaEnsazadaSimple.Location = new System.Drawing.Point(8, 5);
+            this.picListaEnsazadaSimple.Name = "picListaEnsazadaSimple";
+            this.picListaEnsazadaSimple.Size = new System.Drawing.Size(216, 187);
+            this.picListaEnsazadaSimple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picListaEnsazadaSimple.TabIndex = 13;
+            this.picListaEnsazadaSimple.TabStop = false;
             // 
             // lstListado
             // 
@@ -143,6 +143,16 @@
             this.mrcElementoEliminado.TabStop = false;
             this.mrcElementoEliminado.Text = "Elemento Eliminado";
             // 
+            // cbCodigo
+            // 
+            this.cbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCodigo.FormattingEnabled = true;
+            this.cbCodigo.Location = new System.Drawing.Point(84, 33);
+            this.cbCodigo.Name = "cbCodigo";
+            this.cbCodigo.Size = new System.Drawing.Size(121, 24);
+            this.cbCodigo.TabIndex = 7;
+            this.cbCodigo.SelectedIndexChanged += new System.EventHandler(this.cbCodigo_SelectedIndexChanged);
+            // 
             // lblCodigoEE
             // 
             this.lblCodigoEE.AutoSize = true;
@@ -221,22 +231,12 @@
             this.lblTramiteNE.TabIndex = 2;
             this.lblTramiteNE.Text = "Trámite";
             // 
-            // cbCodigo
-            // 
-            this.cbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCodigo.FormattingEnabled = true;
-            this.cbCodigo.Location = new System.Drawing.Point(84, 33);
-            this.cbCodigo.Name = "cbCodigo";
-            this.cbCodigo.Size = new System.Drawing.Size(121, 24);
-            this.cbCodigo.TabIndex = 7;
-            this.cbCodigo.SelectedIndexChanged += new System.EventHandler(this.cbCodigo_SelectedIndexChanged);
-            // 
             // frmListaEnlazadaSimple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 460);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picListaEnsazadaSimple);
             this.Controls.Add(this.lstListado);
             this.Controls.Add(this.GrillaListaSimple);
             this.Controls.Add(this.cmdEliminar);
@@ -246,7 +246,7 @@
             this.Name = "frmListaEnlazadaSimple";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Enlazada Simple";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picListaEnsazadaSimple)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaListaSimple)).EndInit();
             this.mrcElementoEliminado.ResumeLayout(false);
             this.mrcElementoEliminado.PerformLayout();
@@ -258,7 +258,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picListaEnsazadaSimple;
         private System.Windows.Forms.ListBox lstListado;
         private System.Windows.Forms.DataGridView GrillaListaSimple;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

@@ -49,12 +49,12 @@
             this.mrcListaDatos = new System.Windows.Forms.GroupBox();
             this.rtnDescendente = new System.Windows.Forms.RadioButton();
             this.rbtnAscendete = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picListaEnlazadaDoble = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaListaDoble)).BeginInit();
             this.mrcElementoEliminado.SuspendLayout();
             this.mrcNuevoElemento.SuspendLayout();
             this.mrcListaDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picListaEnlazadaDoble)).BeginInit();
             this.SuspendLayout();
             // 
             // lstListado
@@ -264,15 +264,15 @@
             this.rbtnAscendete.UseVisualStyleBackColor = true;
             this.rbtnAscendete.CheckedChanged += new System.EventHandler(this.rbtnAscendete_CheckedChanged);
             // 
-            // pictureBox1
+            // picListaEnlazadaDoble
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.picListaEnlazadaDoble.Image = ((System.Drawing.Image)(resources.GetObject("picListaEnlazadaDoble.Image")));
+            this.picListaEnlazadaDoble.Location = new System.Drawing.Point(8, 5);
+            this.picListaEnlazadaDoble.Name = "picListaEnlazadaDoble";
+            this.picListaEnlazadaDoble.Size = new System.Drawing.Size(216, 187);
+            this.picListaEnlazadaDoble.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picListaEnlazadaDoble.TabIndex = 20;
+            this.picListaEnlazadaDoble.TabStop = false;
             // 
             // frmListaEnlazadaDoble
             // 
@@ -280,7 +280,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 411);
             this.Controls.Add(this.mrcListaDatos);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picListaEnlazadaDoble);
             this.Controls.Add(this.lstListado);
             this.Controls.Add(this.GrillaListaDoble);
             this.Controls.Add(this.cmdEliminar);
@@ -297,7 +297,7 @@
             this.mrcNuevoElemento.PerformLayout();
             this.mrcListaDatos.ResumeLayout(false);
             this.mrcListaDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picListaEnlazadaDoble)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,6 +324,6 @@
         private System.Windows.Forms.GroupBox mrcListaDatos;
         private System.Windows.Forms.RadioButton rtnDescendente;
         private System.Windows.Forms.RadioButton rbtnAscendete;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picListaEnlazadaDoble;
     }
 }

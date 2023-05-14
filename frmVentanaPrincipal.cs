@@ -16,12 +16,10 @@ namespace pryVelezEstructurasDinamicas
         {
             InitializeComponent();
         }
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void datosDelDesarrolladorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDatosDesarrollador DatosDesarrollador = new frmDatosDesarrollador();
@@ -41,16 +39,6 @@ namespace pryVelezEstructurasDinamicas
         {
             frmArbolBinarioBusqueda ArbolBinarioBusqueda = new frmArbolBinarioBusqueda();
             ArbolBinarioBusqueda.ShowDialog();
-        }
-        private void grafoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmGrafo ERGrafo = new frmGrafo();
-            ERGrafo.ShowDialog();
-        }
-        private void listaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListaEnlazadaSimple ListaEnlazadaSimple = new frmListaEnlazadaSimple();
-            ListaEnlazadaSimple.ShowDialog();
         }
         private void simpleToolStripMenuItem_Click(object sender, EventArgs e)
         {

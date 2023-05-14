@@ -50,11 +50,11 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstListado = new System.Windows.Forms.ListBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picPila = new System.Windows.Forms.PictureBox();
             this.mrcNuevoElemento.SuspendLayout();
             this.mrcElementoEliminado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPila)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPila)).BeginInit();
             this.SuspendLayout();
             // 
             // mrcNuevoElemento
@@ -264,21 +264,21 @@
             this.lstListado.Size = new System.Drawing.Size(216, 228);
             this.lstListado.TabIndex = 4;
             // 
-            // pictureBox1
+            // picPila
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 187);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picPila.Image = ((System.Drawing.Image)(resources.GetObject("picPila.Image")));
+            this.picPila.Location = new System.Drawing.Point(12, 12);
+            this.picPila.Name = "picPila";
+            this.picPila.Size = new System.Drawing.Size(216, 187);
+            this.picPila.TabIndex = 6;
+            this.picPila.TabStop = false;
             // 
             // frmPila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 471);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picPila);
             this.Controls.Add(this.lstListado);
             this.Controls.Add(this.GrillaPila);
             this.Controls.Add(this.cmdEliminar);
@@ -294,7 +294,7 @@
             this.mrcElementoEliminado.ResumeLayout(false);
             this.mrcElementoEliminado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPila)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPila)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,6 +322,6 @@
         private System.Windows.Forms.Label lblNombreInfo;
         private System.Windows.Forms.Label lblCodigoInfo;
         private System.Windows.Forms.MaskedTextBox mskCodigoNE;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picPila;
     }
 }

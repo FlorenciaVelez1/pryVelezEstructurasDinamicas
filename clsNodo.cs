@@ -38,6 +38,16 @@ namespace pryVelezEstructurasDinamicas
             get { return varAnterior; }
             set { varAnterior = value; }
         }
+        public clsNodo Derecho
+        {
+            get { return varAnterior; }
+            set { varAnterior = value; }
+        }
+        public clsNodo Izquierdo
+        {
+            get { return varSiguiente; }
+            set { varSiguiente = value; }
+        }
 
     }
 }
