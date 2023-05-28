@@ -11,30 +11,12 @@ namespace pryVelezEstructurasDinamicas
     {
         //Creo el campo inicial del arbol
         private clsNodo Inicio;
+        private clsNodo[] Vector = new clsNodo[100];
+        private Int32 IndVector = 0;
         public clsNodo Raiz
         {
             get { return Inicio; }
             set { Inicio = value; }
-        }
-        public clsNodo BuscarCodigo(Int32 CODIGO)
-        {
-            clsNodo Aux = Raiz;
-            while (Aux != null)
-            {
-                if (CODIGO == Aux.Codigo)
-                {
-                    break;
-                }
-                if (CODIGO < Aux.Codigo)
-                {
-                    Aux = Aux.Izquierdo;
-                }
-                else
-                {
-                    Aux = Aux.Derecho;
-                } 
-            }
-            return Aux;
         }
         public void Agregar(clsNodo nuevo)
         {
@@ -70,8 +52,13 @@ namespace pryVelezEstructurasDinamicas
                 }
             }
         }
-        private clsNodo[] Vector = new clsNodo[100];
-        private Int32 IndVector = 0;
+        public void Eliminar(Int32 CODIGO)
+        {
+            IndVector = 0;
+            GrabarVectorEnOrden(Raiz, CODIGO);
+            Raiz = null;
+            EquilibrarArbol(0, IndVector - 1);
+        }
         public void Equilibrar()
         {
             IndVector = 0;
@@ -88,13 +75,6 @@ namespace pryVelezEstructurasDinamicas
                 EquilibrarArbol(inicio, medir - 1);
                 EquilibrarArbol(medir + 1, fin);
             }
-        }
-        public void Eliminar(Int32 CODIGO)
-        {
-            IndVector = 0;
-            GrabarVectorEnOrden(Raiz, CODIGO);
-            Raiz = null;
-            EquilibrarArbol(0, IndVector - 1);
         }
         private void GrabarVectorEnOrden(clsNodo NodoPadre)
         {
@@ -125,76 +105,336 @@ namespace pryVelezEstructurasDinamicas
                 GrabarVectorEnOrden(NodoPadre.Derecho, CODIGO);
             }
         }
-        public void RecorrerCB(ComboBox CbCodigo)
+        //Acomodar los elementos de combo
+        public void OrdenarAsc(ComboBox CbCodigo)
         {
             CbCodigo.Items.Clear();
-            EnOrdenAsc(CbCodigo, Raiz);
+            InOrdenAsc(CbCodigo, Raiz);
         }
-        private void EnOrdenAsc(ComboBox CbCodigo, clsNodo R)
+        private void InOrdenAsc(ComboBox CbCodigo, clsNodo RAIZ)
         {
-            if (R.Izquierdo != null)
+            if (RAIZ.Izquierdo != null)
             {
-                EnOrdenAsc(CbCodigo, R.Izquierdo);
+                InOrdenAsc(CbCodigo, RAIZ.Izquierdo);
             }
-            CbCodigo.Items.Add(R.Codigo);
-            if (R.Derecho != null)
+            CbCodigo.Items.Add(RAIZ.Codigo);
+            if (RAIZ.Derecho != null)
             {
-                EnOrdenAsc(CbCodigo, R.Derecho);
+                InOrdenAsc(CbCodigo, RAIZ.Derecho);
             }
         }
-        public void ListarLst(ListBox lstListado)
+        public void OrdenarDes(ComboBox CbCodigo)
+        {
+            CbCodigo.Items.Clear();
+            InOrdenDes(CbCodigo, Raiz);
+        }
+        public void InOrdenDes(ComboBox CbCodigo, clsNodo RAIZ)
+        {
+            if (RAIZ.Derecho != null) InOrdenDes(CbCodigo, RAIZ.Derecho); 
+            CbCodigo.Items.Add(RAIZ.Codigo); 
+            if (RAIZ.Izquierdo != null) InOrdenDes(CbCodigo, RAIZ.Izquierdo); 
+        }
+        //Ordenar post
+        public void OrdenarPostAsc(ComboBox CbCodigo)
+        {
+            CbCodigo.Items.Clear();
+            PostOrdenAsc(CbCodigo, Raiz);
+        }
+        public void PostOrdenAsc(ComboBox CbCodigo, clsNodo RAIZ)
+        {
+            if (RAIZ.Izquierdo != null)
+            {
+                PostOrdenAsc(CbCodigo, RAIZ.Izquierdo); 
+            }
+            if (RAIZ.Derecho != null)
+            { 
+                PostOrdenAsc(CbCodigo, RAIZ.Derecho); 
+            }
+            CbCodigo.Items.Add(RAIZ.Codigo);
+        }
+        public void OrdenarPostDesc(ComboBox CbCodigo)
+        {
+            CbCodigo.Items.Clear();
+            PostOrdenDesc(CbCodigo, Raiz);
+        }
+        public void PostOrdenDesc(ComboBox CbCodigo, clsNodo RAIZ)
+        {
+            if (RAIZ.Derecho != null)
+            { 
+                PostOrdenDesc(CbCodigo, RAIZ.Derecho); 
+            }
+            if (RAIZ.Izquierdo != null) 
+            {
+                PostOrdenDesc(CbCodigo, RAIZ.Izquierdo); 
+            }
+            CbCodigo.Items.Add(RAIZ.Codigo);
+        }
+        //Ordenar pre
+        public void OrdenarPreAsc(ComboBox CbCodigo)
+        {
+            CbCodigo.Items.Clear();
+            PreOrdenAsc(CbCodigo, Raiz);
+        }
+        public void PreOrdenAsc(ComboBox CbCodigo, clsNodo RAIZ)
+        {
+            CbCodigo.Items.Add(RAIZ.Codigo);
+            if (RAIZ.Izquierdo != null)
+            { 
+                PreOrdenAsc(CbCodigo, RAIZ.Izquierdo);
+            }
+            if (RAIZ.Derecho != null) 
+            { 
+                PreOrdenAsc(CbCodigo, RAIZ.Derecho);
+            }
+        }
+        public void OrdenarPreDesc(ComboBox CbCodigo)
+        {
+            CbCodigo.Items.Clear();
+            PreOrdenDesc(CbCodigo, Raiz);
+        }
+        public void PreOrdenDesc(ComboBox CbCodigo, clsNodo RAIZ)
+        {
+            CbCodigo.Items.Add(RAIZ.Codigo);
+            if (RAIZ.Derecho != null) 
+            { 
+                PreOrdenDesc(CbCodigo, RAIZ.Derecho); 
+            }
+            if (RAIZ.Izquierdo != null) 
+            {
+                PreOrdenDesc(CbCodigo, RAIZ.Izquierdo);
+            }
+        }
+        //Listar en listbox--------------------------
+        public void ListarAsc(ListBox lstListado)
         {
             lstListado.Items.Clear();
-            EnOrdenAsc(lstListado, Raiz);
+            InOrdenAsc(lstListado, Raiz);
         }
-        public void EnOrdenAsc(ListBox lstListado, clsNodo RAIZ)
+        //Ascendente
+        public void InOrdenAsc(ListBox lstListado, clsNodo RAIZ)
         {
             if (RAIZ.Izquierdo != null)
             {
-                EnOrdenAsc(lstListado, RAIZ.Izquierdo);
+                InOrdenAsc(lstListado, RAIZ.Izquierdo);
             }
-            lstListado.Items.Add(RAIZ.Codigo);
+            lstListado.Items.Add(RAIZ.Codigo + " " + RAIZ.Nombre + " " + RAIZ.Tramite);
             if (RAIZ.Derecho != null)
             {
-                EnOrdenAsc(lstListado, RAIZ.Derecho);
+                InOrdenAsc(lstListado, RAIZ.Derecho);
             }
         }
-        public void EnOrdenDesc(ListBox lstListado, clsNodo RAIZ)
+        //Descendente
+        public void ListarDesc(ListBox lstListado)
+        {
+            lstListado.Items.Clear();
+            InOrdenDesc(lstListado, Raiz);
+        }
+        public void InOrdenDesc(ListBox lstListado, clsNodo RAIZ)
         {
             if (RAIZ.Derecho != null)
             {
-                EnOrdenDesc(lstListado, RAIZ.Derecho);
+                InOrdenDesc(lstListado, RAIZ.Derecho);
             }
             lstListado.Items.Add(RAIZ.Codigo);
             if (RAIZ.Izquierdo != null)
             {
-                EnOrdenDesc(lstListado, RAIZ.Izquierdo);
+                InOrdenDesc(lstListado, RAIZ.Izquierdo);
             }
         }
-        public void PreOrden(ListBox lstListado, clsNodo RAIZ)
+        //Listar post
+        public void ListarPostAsc(ListBox lstListado)
         {
-            lstListado.Items.Add(RAIZ.Codigo);
-            if (RAIZ.Izquierdo != null)
-            {
-                PreOrden(lstListado, RAIZ.Izquierdo);
-            }
-            if (RAIZ.Derecho != null)
-            {
-                PreOrden(lstListado, RAIZ.Derecho);
-            }
+            lstListado.Items.Clear();
+            PostOrdenAsc(lstListado, Raiz);
         }
-        public void PostOrden(ListBox lstListado, clsNodo RAIZ)
+        public void PostOrdenAsc(ListBox lstListado, clsNodo RAIZ)
         {
             if (RAIZ.Izquierdo != null)
             {
-                PostOrden(lstListado, RAIZ.Izquierdo);
-
+                PostOrdenAsc(lstListado, RAIZ.Izquierdo);
+            }
+            if (RAIZ.Derecho != null) 
+            { 
+                PostOrdenAsc(lstListado, RAIZ.Derecho);
+            }
+            lstListado.Items.Add(RAIZ.Codigo + " " + RAIZ.Nombre + " " + RAIZ.Tramite);
+        }
+        public void ListarPostDesc(ListBox lstListado)
+        {
+            lstListado.Items.Clear();
+            PostOrdenDesc(lstListado, Raiz);
+        }
+        public void PostOrdenDesc(ListBox lstListado, clsNodo RAIZ)
+        {
+            if (RAIZ.Derecho != null)
+            {
+                PostOrdenDesc(lstListado, RAIZ.Derecho);
+            }
+            if (RAIZ.Izquierdo != null) 
+            {
+                PostOrdenDesc(lstListado, RAIZ.Izquierdo);
+            }
+            lstListado.Items.Add(RAIZ.Codigo + " " + RAIZ.Nombre + " " + RAIZ.Tramite);
+        }
+        //Listar pre
+        public void ListarPreAsc(ListBox lstListado)
+        {
+            lstListado.Items.Clear();
+            PreOrdenAsc(lstListado, Raiz);
+        }
+        public void PreOrdenAsc(ListBox lstListado, clsNodo RAIZ)
+        {
+            lstListado.Items.Add(RAIZ.Codigo + " " + RAIZ.Nombre + " " + RAIZ.Tramite);
+            if (RAIZ.Izquierdo != null)
+            { 
+                PreOrdenAsc(lstListado, RAIZ.Izquierdo); 
+            }
+            if (RAIZ.Derecho != null) 
+            {
+                PreOrdenAsc(lstListado, RAIZ.Derecho); 
+            }
+        }
+        public void ListarPreDesc(ListBox lstListado)
+        {
+            lstListado.Items.Clear();
+            PreOrdenDesc(lstListado, Raiz);
+        }
+        public void PreOrdenDesc(ListBox lstListado, clsNodo RAIZ)
+        {
+            lstListado.Items.Add(RAIZ.Codigo + " " + RAIZ.Nombre + " " + RAIZ.Tramite);
+            if (RAIZ.Derecho != null)
+            { 
+                PreOrdenDesc(lstListado, RAIZ.Derecho); 
+            }
+            if (RAIZ.Izquierdo != null)
+            { 
+                PreOrdenDesc(lstListado, RAIZ.Izquierdo); 
+            }
+        }
+        //Listar en grilla----------------------
+        public void ListarGrilla(DataGridView GrillaArbolBinario)
+        {
+            GrillaArbolBinario.Rows.Clear();
+            InOrdenAsc(GrillaArbolBinario, Raiz);
+        }
+        //Ascendente
+        public void InOrdenAsc(DataGridView GrillaArbolBinario, clsNodo RAIZ)
+        {
+            if (RAIZ.Izquierdo != null)
+            {
+                InOrdenAsc(GrillaArbolBinario, RAIZ.Izquierdo);
+            }
+            GrillaArbolBinario.Rows.Add(RAIZ.Codigo, RAIZ.Nombre, RAIZ.Tramite);
+            if (RAIZ.Derecho != null)
+            {
+                InOrdenAsc(GrillaArbolBinario, RAIZ.Derecho);
+            }
+        }
+        //Descendente
+        public void ListarDesc(DataGridView GrillaArbolBinario)
+        {
+            GrillaArbolBinario.Rows.Clear();
+            InOrdenDes(GrillaArbolBinario, Raiz);
+        }
+        public void InOrdenDes(DataGridView GrillaArbolBinario, clsNodo RAIZ)
+        {
+            if (RAIZ.Derecho != null)
+            {
+                InOrdenDes(GrillaArbolBinario, RAIZ.Derecho);
+            }
+            GrillaArbolBinario.Rows.Add(RAIZ.Codigo, RAIZ.Nombre, RAIZ.Tramite);
+            if (RAIZ.Izquierdo != null)
+            {
+                InOrdenDes(GrillaArbolBinario, RAIZ.Izquierdo);
+            }
+        }
+        //Listar post
+        public void ListarPostAsc(DataGridView GrillaArbolBinario)
+        {
+            GrillaArbolBinario.Rows.Clear();
+            PostOrdenAsc(GrillaArbolBinario, Raiz);
+        }
+        public void PostOrdenAsc(DataGridView GrillaArbolBinario, clsNodo RAIZ)
+        {
+            if (RAIZ.Izquierdo != null)
+            {
+                PreOrdenAsc(GrillaArbolBinario, RAIZ.Izquierdo);
             }
             if (RAIZ.Derecho != null)
             {
-                PostOrden(lstListado, RAIZ.Derecho);
+                PreOrdenAsc(GrillaArbolBinario, RAIZ.Derecho);
             }
-            lstListado.Items.Add(RAIZ.Codigo);
+            GrillaArbolBinario.Rows.Add(RAIZ.Codigo, RAIZ.Nombre, RAIZ.Tramite);
+        }
+        public void ListarPostDesc(DataGridView GrillaArbolBinario)
+        {
+            GrillaArbolBinario.Rows.Clear();
+            PostOrdenDesc(GrillaArbolBinario, Raiz);
+        }
+        public void PostOrdenDesc(DataGridView GrillaArbolBinario, clsNodo RAIZ)
+        {
+            if (RAIZ.Derecho != null)
+            {
+                PostOrdenDesc(GrillaArbolBinario, RAIZ.Derecho);
+            }
+            if (RAIZ.Izquierdo != null)
+            {
+                PostOrdenDesc(GrillaArbolBinario, RAIZ.Izquierdo);
+            }
+            GrillaArbolBinario.Rows.Add(RAIZ.Codigo, RAIZ.Nombre, RAIZ.Tramite);
+        }
+        //Listar pre
+        public void ListarPreAsc(DataGridView GrillaArbolBinario)
+        {
+            GrillaArbolBinario.Rows.Clear();
+            PreOrdenAsc(GrillaArbolBinario, Raiz);
+        }
+        public void PreOrdenAsc(DataGridView GrillaArbolBinario, clsNodo RAIZ)
+        {
+            GrillaArbolBinario.Rows.Add(RAIZ.Codigo, RAIZ.Nombre, RAIZ.Tramite);
+            if (RAIZ.Izquierdo != null)
+            { 
+                PreOrdenAsc(GrillaArbolBinario, RAIZ.Izquierdo);
+            }
+            if (RAIZ.Derecho != null) 
+            { 
+                PreOrdenAsc(GrillaArbolBinario, RAIZ.Derecho); 
+            }
+        }
+        public void ListarPreDesc(DataGridView GrillaArbolBinario)
+        {
+            GrillaArbolBinario.Rows.Clear();
+            PreOrdenDesc(GrillaArbolBinario, Raiz);
+        }
+        public void PreOrdenDesc(DataGridView GrillaArbolBinario, clsNodo RAIZ)
+        {
+            GrillaArbolBinario.Rows.Add(RAIZ.Codigo, RAIZ.Nombre, RAIZ.Tramite);
+            if (RAIZ.Derecho != null) 
+            { 
+                PreOrdenDesc(GrillaArbolBinario, RAIZ.Derecho); 
+            }
+            if (RAIZ.Izquierdo != null) 
+            { 
+                PreOrdenDesc(GrillaArbolBinario, RAIZ.Izquierdo); 
+            }
+        }
+        //Listar treeview----------------------------------------
+        public void ListarTVPreDes(TreeView TreeView)
+        {
+            TreeView.Nodes.Clear();
+            PreOrdenDesc(TreeView.Nodes, Raiz);
+        }
+        public void PreOrdenDesc(TreeNodeCollection NodoPadre, clsNodo RAIZ)
+        {
+            TreeNode NuevoNodoTv = NodoPadre.Add(RAIZ.Codigo.ToString());
+            if (RAIZ.Izquierdo != null) 
+            { 
+                PreOrdenDesc(NuevoNodoTv.Nodes, RAIZ.Izquierdo);
+            }
+            if (RAIZ.Derecho != null) 
+            {
+                PreOrdenDesc(NuevoNodoTv.Nodes, RAIZ.Derecho); 
+            }
         }
     }
 }
