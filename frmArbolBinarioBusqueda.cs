@@ -61,6 +61,8 @@ namespace pryVelezEstructurasDinamicas
             {
                 GrillaArbolBinario.Rows.Clear();
                 cbCodigo.Items.Clear();
+                lstListado.Items.Clear();
+                treevDatos.Nodes.Clear();
                 cbCodigo.SelectedIndex = -1;
                 Limpieza();
                 Limpiezarbtn();
@@ -178,6 +180,10 @@ namespace pryVelezEstructurasDinamicas
             if (cbCodigo.SelectedIndex != -1)
             {
                 cmdEliminar.Enabled = true;
+            }
+            else
+            {
+                cmdEliminar.Enabled=false;
             }
         }
     }
