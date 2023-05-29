@@ -104,6 +104,7 @@
             this.Column1.HeaderText = "Código";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 125;
             // 
             // Column2
@@ -111,6 +112,7 @@
             this.Column2.HeaderText = "Nombre";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 125;
             // 
             // Column3
@@ -118,6 +120,7 @@
             this.Column3.HeaderText = "Trámite";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 125;
             // 
             // cmdEliminar
@@ -194,6 +197,7 @@
             this.mskCodigo.Location = new System.Drawing.Point(99, 36);
             this.mskCodigo.Mask = "000000";
             this.mskCodigo.Name = "mskCodigo";
+            this.mskCodigo.ResetOnSpace = false;
             this.mskCodigo.Size = new System.Drawing.Size(142, 22);
             this.mskCodigo.TabIndex = 1;
             this.mskCodigo.TextChanged += new System.EventHandler(this.mskCodigoNE_TextChanged);

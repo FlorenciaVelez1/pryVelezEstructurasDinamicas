@@ -77,6 +77,7 @@
             this.mskCodigoNE.Location = new System.Drawing.Point(99, 36);
             this.mskCodigoNE.Mask = "000000";
             this.mskCodigoNE.Name = "mskCodigoNE";
+            this.mskCodigoNE.ResetOnSpace = false;
             this.mskCodigoNE.Size = new System.Drawing.Size(142, 22);
             this.mskCodigoNE.TabIndex = 1;
             this.mskCodigoNE.TextChanged += new System.EventHandler(this.mskCodigoNE_TextChanged);
@@ -241,6 +242,7 @@
             this.Column1.HeaderText = "Código";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 125;
             // 
             // Column2
@@ -248,6 +250,7 @@
             this.Column2.HeaderText = "Nombre";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 125;
             // 
             // Column3
@@ -255,6 +258,7 @@
             this.Column3.HeaderText = "Trámite";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 125;
             // 
             // lstListado
