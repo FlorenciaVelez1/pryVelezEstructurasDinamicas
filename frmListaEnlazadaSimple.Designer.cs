@@ -81,6 +81,7 @@
             this.Column3});
             this.GrillaListaSimple.Location = new System.Drawing.Point(249, 217);
             this.GrillaListaSimple.Name = "GrillaListaSimple";
+            this.GrillaListaSimple.ReadOnly = true;
             this.GrillaListaSimple.RowHeadersVisible = false;
             this.GrillaListaSimple.RowHeadersWidth = 51;
             this.GrillaListaSimple.RowTemplate.Height = 24;
@@ -203,6 +204,7 @@
             this.txtNombreNE.Size = new System.Drawing.Size(142, 22);
             this.txtNombreNE.TabIndex = 2;
             this.txtNombreNE.TextChanged += new System.EventHandler(this.txtNombreNE_TextChanged);
+            this.txtNombreNE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreNE_KeyPress);
             // 
             // lblCodigoNE
             // 

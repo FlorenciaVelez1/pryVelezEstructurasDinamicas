@@ -419,21 +419,39 @@ namespace pryVelezEstructurasDinamicas
             }
         }
         //Listar treeview----------------------------------------
-        public void ListarTVPreDes(TreeView TreeView)
+     
+        public void ListarTVAsc(TreeView TreeView)
         {
             TreeView.Nodes.Clear();
-            PreOrdenDesc(TreeView.Nodes, Raiz);
+            OrdenAsc(TreeView.Nodes, Raiz);
         }
-        public void PreOrdenDesc(TreeNodeCollection NodoPadre, clsNodo RAIZ)
+        public void OrdenAsc(TreeNodeCollection NodoPadre, clsNodo RAIZ)
         {
             TreeNode NuevoNodoTv = NodoPadre.Add(RAIZ.Codigo.ToString());
-            if (RAIZ.Izquierdo != null) 
-            { 
-                PreOrdenDesc(NuevoNodoTv.Nodes, RAIZ.Izquierdo);
+            if (RAIZ.Izquierdo != null)
+            {
+                OrdenAsc(NuevoNodoTv.Nodes, RAIZ.Izquierdo);
             }
+            if (RAIZ.Derecho != null)
+            {
+                OrdenAsc(NuevoNodoTv.Nodes, RAIZ.Derecho);
+            }
+        }
+        public void ListarTVDes(TreeView TreeView)
+        {
+            TreeView.Nodes.Clear();
+            OrdenDesc(TreeView.Nodes, Raiz);
+        }
+        public void OrdenDesc(TreeNodeCollection NodoPadre, clsNodo RAIZ)
+        {
+            TreeNode NuevoNodoTv = NodoPadre.Add(RAIZ.Codigo.ToString());
             if (RAIZ.Derecho != null) 
             {
-                PreOrdenDesc(NuevoNodoTv.Nodes, RAIZ.Derecho); 
+                OrdenDesc(NuevoNodoTv.Nodes, RAIZ.Derecho); 
+            }
+            if (RAIZ.Izquierdo != null)
+            {
+                OrdenDesc(NuevoNodoTv.Nodes, RAIZ.Izquierdo);
             }
         }
     }

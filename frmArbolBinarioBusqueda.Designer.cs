@@ -92,6 +92,7 @@
             this.Column3});
             this.GrillaArbolBinario.Location = new System.Drawing.Point(249, 217);
             this.GrillaArbolBinario.Name = "GrillaArbolBinario";
+            this.GrillaArbolBinario.ReadOnly = true;
             this.GrillaArbolBinario.RowHeadersVisible = false;
             this.GrillaArbolBinario.RowHeadersWidth = 51;
             this.GrillaArbolBinario.RowTemplate.Height = 24;
@@ -214,6 +215,7 @@
             this.txtNombre.Size = new System.Drawing.Size(142, 22);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombreNE_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblCodigoNE
             // 

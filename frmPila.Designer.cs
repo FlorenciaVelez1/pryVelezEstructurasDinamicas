@@ -98,6 +98,7 @@
             this.txtNombreNE.Size = new System.Drawing.Size(142, 22);
             this.txtNombreNE.TabIndex = 2;
             this.txtNombreNE.TextChanged += new System.EventHandler(this.txtNombreNE_TextChanged);
+            this.txtNombreNE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreNE_KeyPress);
             // 
             // lblCodigoNE
             // 
@@ -228,6 +229,7 @@
             this.Column3});
             this.GrillaPila.Location = new System.Drawing.Point(253, 224);
             this.GrillaPila.Name = "GrillaPila";
+            this.GrillaPila.ReadOnly = true;
             this.GrillaPila.RowHeadersVisible = false;
             this.GrillaPila.RowHeadersWidth = 51;
             this.GrillaPila.RowTemplate.Height = 24;

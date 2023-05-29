@@ -22,7 +22,7 @@ namespace pryVelezEstructurasDinamicas
             objArbolBinario.ListarAsc(lstListado);
             objArbolBinario.OrdenarAsc(cbCodigo);
             objArbolBinario.ListarGrilla(GrillaArbolBinario);
-            objArbolBinario.ListarTVPreDes(treevDatos);
+            objArbolBinario.ListarTVAsc(treevDatos);
         }
         private void Limpieza()
         {
@@ -137,14 +137,14 @@ namespace pryVelezEstructurasDinamicas
                    objArbolBinario.ListarPreAsc(GrillaArbolBinario);
                    objArbolBinario.ListarPreAsc(lstListado);
                    objArbolBinario.OrdenarPreAsc(cbCodigo);
-                   objArbolBinario.ListarTVPreDes(treevDatos);
+                   objArbolBinario.ListarTVAsc(treevDatos);
                 }
                 if (rbtnPostOrden.Checked == true)
                 {
                     objArbolBinario.ListarPostAsc(GrillaArbolBinario);
                     objArbolBinario.ListarPostAsc(lstListado);
                     objArbolBinario.OrdenarPostAsc(cbCodigo);
-                    objArbolBinario.ListarTVPreDes(treevDatos);
+                    objArbolBinario.ListarTVAsc(treevDatos);
                 }
             }
         }
@@ -157,21 +157,21 @@ namespace pryVelezEstructurasDinamicas
                     objArbolBinario.ListarDesc(GrillaArbolBinario);
                     objArbolBinario.ListarDesc(lstListado);
                     objArbolBinario.OrdenarDes(cbCodigo);
-                    objArbolBinario.ListarTVPreDes(treevDatos);
+                    objArbolBinario.ListarTVDes(treevDatos);
                 }
                 if (rbtnPreOrden.Checked == true)
                 {
                     objArbolBinario.ListarPreDesc(GrillaArbolBinario);
                     objArbolBinario.ListarPreDesc(lstListado);
                     objArbolBinario.OrdenarPreDesc(cbCodigo);
-                    objArbolBinario.ListarTVPreDes(treevDatos);
+                    objArbolBinario.ListarTVDes(treevDatos);
                 }
                 if (rbtnPostOrden.Checked == true)
                 {
                     objArbolBinario.ListarPostDesc(GrillaArbolBinario);
                     objArbolBinario.ListarPostDesc(lstListado);
                     objArbolBinario.OrdenarPostDesc(cbCodigo);
-                    objArbolBinario.ListarTVPreDes(treevDatos);
+                    objArbolBinario.ListarTVDes(treevDatos);
                 }
             }
         }
@@ -184,6 +184,15 @@ namespace pryVelezEstructurasDinamicas
             else
             {
                 cmdEliminar.Enabled=false;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten letras");
             }
         }
     }
